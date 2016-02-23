@@ -108,11 +108,11 @@ def check_versions():
 
     """
     vagrant_version = execute("vagrant --version")
-    if not vagrant_version.startswith("Vagrant 1.6"):
+    if vagrant_version.split()[-1] < "1.6":
         raise RuntimeError("Unsupported %s" % (vagrant_version,))
 
     virtualbox_version = execute("VBoxManage --version")
-    if not virtualbox_version.startswith("4.3"):
+    if virtualbox_version < "4.3":
         raise RuntimeError("Unsupported VirtualBox %s" %
                            (virtualbox_version,))
 
