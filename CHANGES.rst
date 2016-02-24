@@ -3,6 +3,10 @@ Changes in the development version
 
 None so far.
 
+Changes in version 0.6.0
+========================
+
+* Add support for latest versions of VirtualBox and Vagrant.
 
 Changes in version 0.5.0
 ========================
