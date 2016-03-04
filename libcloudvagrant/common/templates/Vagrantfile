@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
     config.proxy.no_proxy = ENV.fetch("no_proxy",    ENV.fetch("NO_PROXY", nil))
   end
 
-  config.vm.synced_folder ".", "/vagrant", disabled: true
+  config.vm.synced_folder ".", "/vagrant", disabled: false
 
   {% for n in nodes %}
   config.vm.define "{{ n.name }}" do |n|

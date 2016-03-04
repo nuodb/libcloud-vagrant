@@ -56,10 +56,10 @@ __all__ = [
     "test",
 ]
 
-
-compute_providers.set_driver(VAGRANT,
-                             compute_driver.__name__,
-                             compute_driver.VagrantDriver.__name__)
+if "vagrant" not in compute_providers.DRIVERS:
+  compute_providers.set_driver(VAGRANT,
+                               compute_driver.__name__,
+                               compute_driver.VagrantDriver.__name__)
 
 security.CA_CERTS_PATH.append(os.path.join(os.path.dirname(__file__),
                                            "common",
